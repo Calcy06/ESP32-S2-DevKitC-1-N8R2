@@ -1,0 +1,12 @@
+# ESP-IDF 构建产物
+build/
+sdkconfig
+sdkconfig.old
+
+# PC 端预览/仿真产物
+tools/frames.bin
+tools/preview
+tools/sim
+*.pbm
+*.o
+__pycache__/

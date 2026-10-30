@@ -1,0 +1,7 @@
+dependencies:
+  idf: ">=5.0"
+description: CMSIS-RTOS2 (os*) API layer for ESP-IDF
+license: Apache-2.0
+files:
+  exclude:
+    - "**/*.md"

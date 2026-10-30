@@ -1,0 +1,27 @@
+# ESP-IDF 构建产物（体积巨大，务必忽略）
+build/
+sdkconfig
+sdkconfig.old
+sdkconfig.defaults.old
+
+# 组件管理器下载的依赖（可由 dependencies.lock 自动恢复）
+managed_components/
+
+# Python 虚拟环境 / 缓存
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+
+# 编辑器配置
+.vscode/
+.idea/
+*.swp
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# WorkBuddy 工作记录（含对话备忘，不上传）
+.workbuddy/

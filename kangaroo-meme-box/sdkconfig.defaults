@@ -1,0 +1,28 @@
+# ===== ESP32-S2-DevKitC-1-N8R2 =====
+CONFIG_IDF_TARGET="esp32s2"
+
+# N8 = 8MB Flash（R2 = 2MB PSRAM，本工程不用，保持默认关闭即可）
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="8MB"
+
+# 单核 240MHz：动画 + 刷屏都吃 CPU，直接拉满
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+
+# 主任务栈：帧缓冲和刷屏缓冲都是静态的，这里给 8K 是给日志和浮点运算留余量
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
+
+# FreeRTOS 节拍 1000Hz，vTaskDelay(40) 才能精确到 40ms
+CONFIG_FREERTOS_HZ=1000
+
+# 日志级别：INFO 能看清初始化过程和按键事件
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+CONFIG_LOG_MAXIMUM_LEVEL_INFO=y
+
+# ---------------------------------------------------------------------------
+# 想进一步压缩固件（8MB Flash 其实完全不缺空间）可以打开下面这些，
+# 如果编译报某组件缺失，把对应行删掉即可：
+#
+#   CONFIG_BT_ENABLED=n             # ESP32-S2 本来就没有蓝牙
+#   CONFIG_ESP_WIFI_ENABLED=n       # 本项目不联网
+#   CONFIG_OPENTHREAD_ENABLED=n
+# ---------------------------------------------------------------------------
